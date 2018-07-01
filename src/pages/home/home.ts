@@ -30,7 +30,7 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
-    this.loading.dismiss();
+    // this.loading.dismiss();
   }
 
   loadingPerson() {
@@ -45,6 +45,7 @@ export class HomePage {
         'acc': '123456-7'   
       }
     })
+    this.loading.dismiss();
   }
 
   toMenu() {

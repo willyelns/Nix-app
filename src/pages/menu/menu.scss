@@ -1,6 +1,6 @@
 page-menu {
     .button {
-        padding: 1.5em 1em;
+        padding: 1.5em .5em;
         border: 1px solid;
         border-radius: .5em;
         margin: auto;
@@ -12,7 +12,7 @@ page-menu {
             display: block;
         }
         span {
-            font-size: 2rem;
+            font-size: 1.6rem;
             @extend .text-semi-bold;
         }
 
