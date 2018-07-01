@@ -1,0 +1,23 @@
+page-menu {
+    .button {
+        padding: 1.5em 1em;
+        border: 1px solid;
+        border-radius: .5em;
+        margin: auto;
+        display:  block;
+        transition: transform 200ms ease;
+
+        ion-icon {
+            font-size: 6em;
+            display: block;
+        }
+        span {
+            font-size: 2rem;
+            @extend .text-semi-bold;
+        }
+
+        &:active {
+            transform: scale(1.1, 1.1);
+        }
+    }
+}

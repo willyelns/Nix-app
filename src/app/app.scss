@@ -14,3 +14,32 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+.user {
+    img {
+        display: block;
+        margin: auto;
+        border-radius: 50%;
+        border: 2px solid ;
+    }
+    &-name {
+        @extend .text-semi-bold;   
+    }
+    &-ag {
+        @extend .text-thin;
+    }
+    &-cc {
+        @extend .text-thin;
+    }
+}
+
+//Must be put in utils.scss
+.text {
+    &-thin {
+        font-weight: 300;
+    }
+    &-semi-bold {
+        font-weight: 500;
+    }
+}

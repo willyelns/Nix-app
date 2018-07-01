@@ -1,28 +1,3 @@
 page-home {
-    .user {
-        img {
-            display: block;
-            margin: auto;
-            border-radius: 50%;
-            border: 2px solid ;
-        }
-    }
-    &-name {
-        @extend .text-semi-bold;   
-    }
-    &-ag {
-        @extend .text-thin;
-    }
-    &-cc {
-        @extend .text-thin;
-    }
-}
-
-.text {
-    &-thin {
-        font-weight: 300;
-    }
-    &-semi-bold {
-        font-weight: 600;
-    }
+    
 }

@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons start>
+        <button ion-button (click)="toBack()">
+          <ion-icon name="arrow-back"></ion-icon>
+          Voltar
+        </button>
+      </ion-buttons>
+      <ion-title>NIX</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-content padding>
+
+  <ion-grid>
+      <ion-row class="user">
+        <ion-col>
+            <img src="http://placehold.it/150x150" text-center>
+        </ion-col>
+      </ion-row>
+      <ion-row margin-top>
+        <ion-col col-12>
+          <h1 class="user-name" text-center>Willyelns G. Xavier</h1>
+        </ion-col>
+        <ion-col>
+          <span class="user-ag" float-right>AG 12340</span>
+        </ion-col>
+        <ion-col>
+          <span class="user-cc">CC 123456-7</span>
+        </ion-col>
+      </ion-row>
+
+      <hr>
+
+      <ion-row>
+        <ion-col col-6 offset-3>
+            <div class="button" (click)="toHome()">
+                <ion-icon name="home"></ion-icon>
+                <span>Início</span>
+            </div>
+        </ion-col>
+
+        <ion-col col-6 offset-3>
+            <div class="button" (click)="toTransfer()">
+                <ion-icon name="swap"></ion-icon>
+                <span>Transferências</span>
+            </div>
+        </ion-col>
+
+        <ion-col col-6 offset-3>
+            <div class="button" (click)="toLogout()">
+                <ion-icon name="log-out"></ion-icon>
+                <span>Sair</span>
+            </div>
+        </ion-col>
+
+      </ion-row>
+
+    </ion-grid>
+
+</ion-content>
