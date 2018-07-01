@@ -17,11 +17,13 @@ page-money-transfer-list {
             h2 {
                 @extend .text-semi-bold;
                 font-size: 2rem;
+                min-width: 40px;
+                text-align: center;
             }
         }
         &-divider {
             height: 90px;
-            margin: 0 1em;
+            margin: 0 .5em;
             border: 1px solid rgba(0,0,0,.5);
         }
         &-data {

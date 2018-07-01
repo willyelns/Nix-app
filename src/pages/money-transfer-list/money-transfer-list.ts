@@ -39,8 +39,6 @@ export class MoneyTransferListPage {
   }
 
   doRefresh(refresher) {
-    console.log('Begin async operation', refresher);
-    // this.transfers = this.apiProvider.getTransfers();
     console.log('before transfers', this.transfers);
     this.transfers = this.apiProvider.load().then(data => {
       // this.transfers = data;
