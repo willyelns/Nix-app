@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, LoadingController } from 'ionic-angular';
 import { MenuPage } from '../menu/menu';
 import { MoneyTransferListPage } from '../money-transfer-list/money-transfer-list';
 
@@ -20,9 +20,17 @@ export class HomePage {
     'ag': '',
     'acc': ''
   };
+  loading = this.loadingCtrl.create({
+    content: 'Por favor, espere...'
+  });
 
-  constructor(public navCtrl: NavController, public personProvider: PersonProvider) {
+  constructor(public navCtrl: NavController, public personProvider: PersonProvider, public loadingCtrl: LoadingController) {
+    this.loading.present();
     this.loadingPerson();
+  }
+
+  ionViewDidLoad() {
+    this.loading.dismiss();
   }
 
   loadingPerson() {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { MenuPage } from '../menu/menu';
 import { ApiProvider } from './../../providers/api//api';
 
@@ -11,13 +11,17 @@ import { ApiProvider } from './../../providers/api//api';
 export class MoneyTransferListPage {
 
   transfers: any;
+  loading = this.loadingCtrl.create({
+    content: 'Por favor, espere...'
+  });
+  constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ApiProvider, public loadingCtrl: LoadingController) {
+    this.loading.present();
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ApiProvider) {
-    this.transfers = this.apiProvider.getTransfers();
-    this.transfers.subscribe(results => {
-      // console.log('data returned', results.data.map(item => item.valor = this.moneyFormat(item.valor.toFixed(2))));
-      console.log('data returned', results.data.map(item => item.valor = this.moneyFormat(item.valor.toFixed(2))));
-    });
+    this.transfers = this.apiProvider.load();
+    // this.transfers.subscribe(results => {
+    //   // console.log('data returned', results.data.map(item => item.valor = this.moneyFormat(item.valor.toFixed(2))));
+    //   console.log('data returned', results.data.map(item => item.valor = this.moneyFormat(item.valor.toFixed(2))));
+    // });
   }
 
   moneyFormat(value) {
@@ -27,7 +31,7 @@ export class MoneyTransferListPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MoneyTransferListPage');
+    this.loading.dismiss();
   }
 
   toMenu() {
@@ -36,11 +40,17 @@ export class MoneyTransferListPage {
 
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
-    this.transfers = this.apiProvider.getTransfers();
-    setTimeout(() => {
-      console.log('Async operation has ended');
+    // this.transfers = this.apiProvider.getTransfers();
+    console.log('before transfers', this.transfers);
+    this.transfers = this.apiProvider.load().then(data => {
+      // this.transfers = data;
+      console.log('after transfers', this.transfers);
       refresher.complete();
-    }, 2000);
+    });
+    // setTimeout(() => {
+    //   console.log('Async operation has ended');
+    //   refresher.complete();
+    // }, 2000);
   }
 
   previousPage() {

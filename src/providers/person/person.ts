@@ -13,7 +13,6 @@ export class PersonProvider {
   data: any;
 
   constructor(public http: HttpClient) {
-    console.log('Hello PersonProvider Provider');
   }
 
   load() {
