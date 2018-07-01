@@ -11,28 +11,51 @@ import { ApiProvider } from './../../providers/api//api';
 })
 export class MoneyTransferListPage {
 
-  transfers: any;
+  elementsPage : number;
+  previousText : string;
+  nextText : string;
+  pages : number;
+  test : Array<any>;
+  currentPage : number; 
+  transfers: Array<any>;
+  transferPage : Array<any>;
   loading = this.loadingCtrl.create({
     content: 'Por favor, espere...'
   });
   constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ApiProvider, public loadingCtrl: LoadingController, public modalCtrl: ModalController) {
     this.loading.present();
+    this.nextText = 'Próximo';
+    this.previousText = '';
+    this.pages = 0;
+    this.currentPage = 0;
+    this.elementsPage = 5;
+    this.loadingTransferList();
+  }
 
-    this.transfers = this.apiProvider.load();
-    // this.transfers.subscribe(results => {
-    //   // console.log('data returned', results.data.map(item => item.valor = this.moneyFormat(item.valor.toFixed(2))));
-    //   console.log('data returned', results.data.map(item => item.valor = this.moneyFormat(item.valor.toFixed(2))));
-    // });
+  loadingTransferList() {
+    this.apiProvider.load().then(result => {
+
+      this.transfers = result.data;
+
+      if(this.transfers.length === 0) {
+        console.log('empty screen');
+      } else {
+        this.currentPage = 1;
+        this.pages = this.transfers.length / 5;
+        let i = 0;
+        this.transfers.forEach(item => {
+          item.valor = this.moneyFormat(item.valor.toFixed(2));
+        })
+        this.transferPage = this.paginateTransferList(this.elementsPage, this.currentPage);
+      }
+      this.loading.dismiss();
+    })
   }
 
   moneyFormat(value) {
     const separateValue = value.split('.');
     separateValue[0] = separateValue[0].split(/(?=(?:...)*$)/).join('.');
     return separateValue.join(',');
-  }
-
-  ionViewDidLoad() {
-    this.loading.dismiss();
   }
 
   toMenu() {
@@ -46,17 +69,29 @@ export class MoneyTransferListPage {
       console.log('after transfers', this.transfers);
       refresher.complete();
     });
-    // setTimeout(() => {
-    //   console.log('Async operation has ended');
-    //   refresher.complete();
-    // }, 2000);
+  }
+
+  setPaginationText() {
+    this.nextText = this.currentPage === this.pages ? '' : 'Próximo';
+    this.previousText = this.currentPage > 1 ? 'Anterior' : '';
+  }
+
+  paginateTransferList(page_size, page_number) {
+    page_number--;
+    return this.transfers.slice(page_number * page_size, (page_number + 1) * page_size);
   }
 
   previousPage() {
-    console.log('previous');
+    this.currentPage = this.currentPage > 1 ? this.currentPage - 1 : 1;
+    this.setPaginationText();
+    this.transferPage = this.paginateTransferList(this.elementsPage, this.currentPage);
+    console.log('previous', this.currentPage);
   }
   nextPage() {
-    console.log('next');
+    this.currentPage = this.currentPage < this.pages ? this.currentPage+1 : this.pages;
+    this.setPaginationText();
+    this.transferPage = this.paginateTransferList(this.elementsPage, this.currentPage);
+    console.log('next', this.currentPage);
   }
   transferDetails(transfer) {
     console.log('details', transfer);
