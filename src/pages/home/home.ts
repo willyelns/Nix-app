@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { MenuPage } from '../menu/menu';
+import { MoneyTransferListPage } from '../money-transfer-list/money-transfer-list';
 
 @Component({
   selector: 'page-home',
@@ -14,6 +15,10 @@ export class HomePage {
 
   toMenu() {
     this.navCtrl.push(MenuPage);
+  }
+
+  toMoneyTransferList() {
+    this.navCtrl.push(MoneyTransferListPage);
   }
 
 }

@@ -5,7 +5,7 @@ page-menu {
         border-radius: .5em;
         margin: auto;
         display:  block;
-        transition: transform 200ms ease;
+        @include transition(transform 200ms ease);
 
         ion-icon {
             font-size: 6em;

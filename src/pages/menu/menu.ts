@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
-
+import { MoneyTransferListPage } from '../money-transfer-list/money-transfer-list';
 /**
  * Generated class for the MenuPage page.
  *
@@ -32,7 +32,7 @@ export class MenuPage {
   }
   toTransfer() {
     console.log('transfer');
-    // this.navCtrl.push();
+    this.navCtrl.push(MoneyTransferListPage);
   }
   toLogout() {
     console.log('Logout');

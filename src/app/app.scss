@@ -15,6 +15,19 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,600');
+
+
+// _variables
+$status-approved: #16B961;
+$status-failed: #F03030;
+$status-processed: #505155;
+
+$font-family: 'Raleway' sans-serif;
+
+body {
+    font-family: $font-family;
+}
 
 .user {
     img {
@@ -42,4 +55,16 @@
     &-semi-bold {
         font-weight: 500;
     }
+}
+
+.d-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+@mixin transition($property) {
+    -webkit-transform: $property;
+       -ms-transform: $property;
+           transform: $property;
 }

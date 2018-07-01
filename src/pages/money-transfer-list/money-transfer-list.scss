@@ -1,0 +1,53 @@
+@mixin transfer-status($status-color) {
+    border-right: 3px solid $status-color;
+}
+page-money-transfer-list {
+    ion-col {
+        padding: 0 !important;
+    }
+    ion-card {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+    .transfer {
+        @extend .d-flex;
+        align-items: center;
+        padding: 1.25em 0.5em;
+        &-type {
+            h2 {
+                @extend .text-semi-bold;
+                font-size: 2rem;
+            }
+        }
+        &-divider {
+            height: 90px;
+            margin: 0 1em;
+            border: 1px solid rgba(0,0,0,.5);
+        }
+        &-data {
+            h6 {
+                @extend .text-semi-bold;
+            }
+            h5 {
+                @extend .text-thin;
+                font-size: 1.6rem;
+            }
+        }
+        &-money {
+            h5 {
+                @extend .text-semi-bold;
+                font-size: 1.6rem;
+            }
+        }
+        &.status-approved {
+            @include transfer-status($status-approved);
+        }
+        &.status-failed {
+            @include transfer-status($status-failed);
+        }
+        &.status-processed {
+            @include transfer-status($status-processed);
+        }
+    }
+}
+

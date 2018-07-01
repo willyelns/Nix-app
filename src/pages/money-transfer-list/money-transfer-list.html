@@ -1,0 +1,87 @@
+<ion-header color="primary">
+    <ion-toolbar>
+      <ion-buttons start>
+        <button ion-button icon-only (click)="toMenu()">
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>NIX</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only>
+          <ion-icon name="options"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="Puxe para baixo para atualizar" refreshingText="Atualizando...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h1>Transferências</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12 margin-top>
+          <ion-card (click)="transferDetails()">
+              <ion-card-content class="transfer status-approved">
+                  <div class="transfer-type">
+                      <h2>TED</h2>
+                  </div>
+                  <div class="transfer-divider"></div>
+                  <div class="transfer-data">
+                      <h6>Pagador</h6>
+                      <h5>Julia Silva</h5>
+                      <h6>Beneficiário</h6>
+                      <h5>Beatriz Nascimento</h5>
+                  </div>
+                  <div class="transfer-money">
+                      <h5>R$12.345,62</h5>
+                  </div>
+              </ion-card-content>
+            </ion-card>
+      </ion-col>
+
+      <ion-col col-12 margin-top *ngFor="let transfer of transfers">
+          <ion-card (click)="transferDetails()">
+              <ion-card-content class="transfer status-approved">
+                  <div class="transfer-type">
+                      <h2>TED</h2>
+                  </div>
+                  <div class="transfer-divider"></div>
+                  <div class="transfer-data">
+                      <h6>Pagador</h6>
+                      <h5>Julia Silva</h5>
+                      <h6>Beneficiário</h6>
+                      <h5>Beatriz Nascimento</h5>
+                  </div>
+                  <div class="transfer-money">
+                      <h5>R$12.345,62</h5>
+                  </div>
+              </ion-card-content>
+            </ion-card>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer color="primary">
+    <ion-toolbar>
+        <ion-buttons start>
+            <button ion-button (click)="previousPage()">
+              Anterior
+            </button>
+          </ion-buttons>
+          <ion-title>1/1</ion-title>
+          <ion-buttons end>
+            <button ion-button (click)="nextPage()">
+              Próximo
+            </button>
+          </ion-buttons>
+    </ion-toolbar>  
+  </ion-footer>
