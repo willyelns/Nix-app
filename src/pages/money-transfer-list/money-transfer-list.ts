@@ -42,14 +42,14 @@ export class MoneyTransferListPage {
       } else {
         this.currentPage = 1;
         this.pages = this.transfers.length / 5;
-        let i = 0;
         this.transfers.forEach(item => {
-          item.valor = this.moneyFormat(item.valor.toFixed(2));
+          item.valor = typeof item.valor === 'string' ? item.valor : this.moneyFormat(item.valor.toFixed(2));
         })
         this.transferPage = this.paginateTransferList(this.elementsPage, this.currentPage);
       }
       this.loading.dismiss();
     })
+    return true;
   }
 
   moneyFormat(value) {
@@ -63,12 +63,8 @@ export class MoneyTransferListPage {
   }
 
   doRefresh(refresher) {
-    console.log('before transfers', this.transfers);
-    this.transfers = this.apiProvider.load().then(data => {
-      // this.transfers = data;
-      console.log('after transfers', this.transfers);
-      refresher.complete();
-    });
+    let finished = this.loadingTransferList();
+    if(finished) { refresher.complete()}
   }
 
   setPaginationText() {
