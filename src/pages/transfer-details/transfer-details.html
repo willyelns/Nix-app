@@ -1,0 +1,119 @@
+<ion-header color="primary">
+    <ion-toolbar>
+      <ion-title>NIX</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="dismiss()">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-content padding class="details">
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h1>Detalhes da Transferência</h1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid padding-left>
+        <ion-row>
+          <ion-col col-12>
+            <h2>Pagador</h2>
+          </ion-col>
+        </ion-row>
+        <ion-row padding-left>
+          <ion-col col-3>
+            <h4>Nome:</h4>
+          </ion-col>
+          <ion-col col-8>
+            <h3>{{transferDetails.payer.nome}}</h3>
+          </ion-col>
+          <ion-col col-3>
+              <h5>Banco:</h5>
+          </ion-col>
+          <ion-col col-2>
+              <h3>{{transferDetails.payer.banco}}</h3>
+          </ion-col>
+          <ion-col col-3>
+              <h5>Agência:</h5>
+          </ion-col>
+          <ion-col col-3>
+              <h3>{{transferDetails.payer.agencia}}</h3>
+          </ion-col>
+          <ion-col col-3>
+              <h5>Conta:</h5>
+          </ion-col>
+          <ion-col col-6>
+              <h3>{{transferDetails.payer.conta}}</h3>
+          </ion-col>
+         </ion-row>
+
+        <ion-row>
+          <ion-col col-12>
+            <h2>Beneficiário</h2>
+          </ion-col>
+        </ion-row>
+        <ion-row padding-left>
+          <ion-col col-3>
+            <h4>Nome:</h4>
+          </ion-col>
+          <ion-col col-8>
+            {{transferDetails.recipient.nome}}
+          </ion-col>
+          <ion-col col-3>
+            <h4>Banco:</h4>
+          </ion-col>
+          <ion-col col-2>
+            {{transferDetails.recipient.banco}}
+          </ion-col>
+          <ion-col col-3>
+            <h4>Agência:</h4>
+          </ion-col>
+          <ion-col col-3>
+            {{transferDetails.recipient.agencia}}
+          </ion-col>
+          <ion-col col-3>
+            <h4>Conta:</h4>
+          </ion-col>
+          <ion-col col-6>
+            {{transferDetails.recipient.conta}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <h2>Transação</h2>
+          </ion-col>
+        </ion-row>
+        <ion-row padding-left>
+          <ion-col col-2>
+            <h4>ID:</h4>
+          </ion-col>
+          <ion-col col-10>
+            <h3>{{transferDetails.id}}</h3>
+          </ion-col>
+          <ion-col col-2>
+            <h4>Tipo:</h4>
+          </ion-col>
+          <ion-col col-2>
+            <h3 text-uppercase>{{transferDetails.type}}</h3>
+          </ion-col>
+          <ion-col col-3>
+            <h4>Status:</h4>
+          </ion-col>
+          <ion-col col-5>
+            <h3 text-capitalize>{{transferDetails.status}}</h3>
+          </ion-col>
+          <ion-col col-3>
+            <h4>Valor:</h4>
+          </ion-col>
+          <ion-col>
+            <h3 class="details-value" text-right>{{transferDetails.value}}</h3>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+</ion-content>

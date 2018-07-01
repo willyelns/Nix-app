@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, ModalController } from 'ionic-angular';
 import { MenuPage } from '../menu/menu';
+import { TransferDetailsPage } from '../transfer-details/transfer-details';
 import { ApiProvider } from './../../providers/api//api';
 
 @IonicPage()
@@ -14,7 +15,7 @@ export class MoneyTransferListPage {
   loading = this.loadingCtrl.create({
     content: 'Por favor, espere...'
   });
-  constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ApiProvider, public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ApiProvider, public loadingCtrl: LoadingController, public modalCtrl: ModalController) {
     this.loading.present();
 
     this.transfers = this.apiProvider.load();
@@ -66,19 +67,30 @@ export class MoneyTransferListPage {
     //   'status': 'statusTest'
     // }
 
-    const filter = {
-      'payer': 'pagadorTest',
-      'recipient': '',
-      'type': 'cc',
-      'status': ''
+    // const filter = {
+    //   'payer': 'pagadorTest',
+    //   'recipient': '',
+    //   'type': 'cc',
+    //   'status': ''
+    // }
+
+    // // console.log('filter test', this.apiProvider.getFilteredTransfers(filter).subscribe(data => data));
+
+    // this.apiProvider.getFilteredTransfers(filter).subscribe(data => {
+    //   console.log('filter test', data);
+    // })
+    let transferObject = {
+      'details': {
+        'id': transfer.id,
+        'recipient': transfer.beneficiario,
+        'payer': transfer.pagador,
+        'value': transfer.valor,
+        'status': transfer.status,
+        'type': transfer.tipo
+      }
     }
-
-    // console.log('filter test', this.apiProvider.getFilteredTransfers(filter).subscribe(data => data));
-
-    this.apiProvider.getFilteredTransfers(filter).subscribe(data => {
-      console.log('filter test', data);
-    })
-
+    let transferDetailsModal = this.modalCtrl.create(TransferDetailsPage, transferObject);
+    transferDetailsModal.present();
   }
 
 }

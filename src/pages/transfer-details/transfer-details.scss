@@ -1,0 +1,23 @@
+page-transfer-details {
+    .details {
+        h1 {
+            font-size: 2.2rem;
+        }
+        h4 {
+            font-size: 1.3rem
+        }
+        h5 {
+            font-size: 1.3rem;
+        }
+        h2 {
+            @extend .text-regular;
+        }
+        h3 {
+            font-size: 1.8rem;
+            @extend .text-thin;
+        }
+        &-value {
+            @extend .text-semi-bold;
+        }
+    }
+}

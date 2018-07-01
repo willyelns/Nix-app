@@ -9,6 +9,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { MenuPage } from '../pages/menu/menu';
 import { MoneyTransferListPage } from '../pages/money-transfer-list/money-transfer-list';
+import { TransferDetailsPage } from '../pages/transfer-details/transfer-details';
 import { ApiProvider } from '../providers/api/api';
 import { PersonProvider } from '../providers/person/person';
 
@@ -17,7 +18,8 @@ import { PersonProvider } from '../providers/person/person';
     MyApp,
     HomePage,
     MenuPage,
-    MoneyTransferListPage
+    MoneyTransferListPage,
+    TransferDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,7 @@ import { PersonProvider } from '../providers/person/person';
     HomePage,
     MenuPage,
     MoneyTransferListPage,
+    TransferDetailsPage
   ],
   providers: [
     StatusBar,
