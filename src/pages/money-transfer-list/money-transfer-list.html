@@ -1,4 +1,4 @@
-<ion-header color="primary">
+<ion-header color="positive">
     <ion-toolbar>
       <ion-buttons start>
         <button ion-button icon-only (click)="toMenu()">
@@ -26,41 +26,21 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col col-12 margin-top>
-          <ion-card (click)="transferDetails()">
-              <ion-card-content class="transfer status-approved">
+      <ion-col col-12 margin-top *ngFor="let transfer of (transfers | async)?.data">
+          <ion-card (click)="transferDetails(transfer)">
+              <ion-card-content class="transfer status-{{transfer.status}}">
                   <div class="transfer-type">
-                      <h2>TED</h2>
+                      <h2 text-uppercase>{{transfer.tipo}}</h2>
                   </div>
                   <div class="transfer-divider"></div>
                   <div class="transfer-data">
                       <h6>Pagador</h6>
-                      <h5>Julia Silva</h5>
+                      <h5>{{transfer.pagador.nome}}</h5>
                       <h6>Beneficiário</h6>
-                      <h5>Beatriz Nascimento</h5>
+                      <h5>{{transfer.beneficiario.nome}}</h5>
                   </div>
                   <div class="transfer-money">
-                      <h5>R$12.345,62</h5>
-                  </div>
-              </ion-card-content>
-            </ion-card>
-      </ion-col>
-
-      <ion-col col-12 margin-top *ngFor="let transfer of transfers">
-          <ion-card (click)="transferDetails()">
-              <ion-card-content class="transfer status-approved">
-                  <div class="transfer-type">
-                      <h2>TED</h2>
-                  </div>
-                  <div class="transfer-divider"></div>
-                  <div class="transfer-data">
-                      <h6>Pagador</h6>
-                      <h5>Julia Silva</h5>
-                      <h6>Beneficiário</h6>
-                      <h5>Beatriz Nascimento</h5>
-                  </div>
-                  <div class="transfer-money">
-                      <h5>R$12.345,62</h5>
+                      <h5 float-right>R${{transfer.valor}}</h5>
                   </div>
               </ion-card-content>
             </ion-card>

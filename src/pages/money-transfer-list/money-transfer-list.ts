@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MenuPage } from '../menu/menu';
-import { HttpClient } from '@angular/common/http';
+import { ApiProvider } from './../../providers/api//api';
 
 @IonicPage()
 @Component({
@@ -12,15 +12,19 @@ export class MoneyTransferListPage {
 
   transfers: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private httpClient: HttpClient) {
-    // this.transfers = this.httpClient.get('https://nix-bank-qa.cloudint.nexxera.com/v1/transactions');
-    this.transfers = this.httpClient.get('https://swapi.co/api/films/');
-    // this.transfers.subscribe(data => {
-    //   console.log('data returned', data);
-    // });
+  constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ApiProvider) {
+    this.transfers = this.apiProvider.getTransfers();
+    this.transfers.subscribe(results => {
+      // console.log('data returned', results.data.map(item => item.valor = this.moneyFormat(item.valor.toFixed(2))));
+      console.log('data returned', results.data.map(item => item.valor = this.moneyFormat(item.valor.toFixed(2))));
+    });
   }
 
-  
+  moneyFormat(value) {
+    const separateValue = value.split('.');
+    separateValue[0] = separateValue[0].split(/(?=(?:...)*$)/).join('.');
+    return separateValue.join(',');
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MoneyTransferListPage');
@@ -32,7 +36,7 @@ export class MoneyTransferListPage {
 
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
-
+    this.transfers = this.apiProvider.getTransfers();
     setTimeout(() => {
       console.log('Async operation has ended');
       refresher.complete();
@@ -45,8 +49,28 @@ export class MoneyTransferListPage {
   nextPage() {
     console.log('next');
   }
-  transferDetails() {
-    console.log('details');
+  transferDetails(transfer) {
+    console.log('details', transfer);
+    // const filter = {
+    //   'payer': 'pagadorTest',
+    //   'recipient': 'beneficiarioTest',
+    //   'type': 'tipoTest',
+    //   'status': 'statusTest'
+    // }
+
+    const filter = {
+      'payer': 'pagadorTest',
+      'recipient': '',
+      'type': 'cc',
+      'status': ''
+    }
+
+    // console.log('filter test', this.apiProvider.getFilteredTransfers(filter).subscribe(data => data));
+
+    this.apiProvider.getFilteredTransfers(filter).subscribe(data => {
+      console.log('filter test', data);
+    })
+
   }
 
 }

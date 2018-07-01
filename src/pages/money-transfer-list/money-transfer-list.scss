@@ -12,7 +12,7 @@ page-money-transfer-list {
     .transfer {
         @extend .d-flex;
         align-items: center;
-        padding: 1.25em 0.5em;
+        padding: 1em 0.5em;
         &-type {
             h2 {
                 @extend .text-semi-bold;
@@ -25,6 +25,8 @@ page-money-transfer-list {
             border: 1px solid rgba(0,0,0,.5);
         }
         &-data {
+            width: 100%;
+            padding-right: .35em;
             h6 {
                 @extend .text-semi-bold;
             }
@@ -39,13 +41,13 @@ page-money-transfer-list {
                 font-size: 1.6rem;
             }
         }
-        &.status-approved {
+        &.status-liquidado {
             @include transfer-status($status-approved);
         }
-        &.status-failed {
+        &.status-invalido {
             @include transfer-status($status-failed);
         }
-        &.status-processed {
+        &.status-processado {
             @include transfer-status($status-processed);
         }
     }
