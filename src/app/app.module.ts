@@ -10,6 +10,7 @@ import { HomePage } from '../pages/home/home';
 import { MenuPage } from '../pages/menu/menu';
 import { MoneyTransferListPage } from '../pages/money-transfer-list/money-transfer-list';
 import { ApiProvider } from '../providers/api/api';
+import { PersonProvider } from '../providers/person/person';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ApiProvider } from '../providers/api/api';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ApiProvider
+    ApiProvider,
+    PersonProvider
   ]
 })
 export class AppModule {}

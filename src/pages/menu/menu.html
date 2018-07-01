@@ -15,21 +15,24 @@
 
   <ion-grid>
       <ion-row class="user">
-        <ion-col>
-            <img src="http://placehold.it/150x150" text-center>
-        </ion-col>
-      </ion-row>
-      <ion-row margin-top>
-        <ion-col col-12>
-          <h1 class="user-name" text-center>Willyelns G. Xavier</h1>
-        </ion-col>
-        <ion-col>
-          <span class="user-ag" float-right>AG 12340</span>
-        </ion-col>
-        <ion-col>
-          <span class="user-cc">CC 123456-7</span>
-        </ion-col>
-      </ion-row>
+          <ion-col>
+              <img [src]="person.picture" text-center>
+          </ion-col>
+        </ion-row>
+        <ion-row margin-top>
+          <ion-col col-12>
+            <div class="user-fullname">
+                <h1 class="user-name" text-center>{{person.name.first}}</h1>
+                <h1 class="user-name" text-center>{{person.name.last}}</h1>
+            </div>
+          </ion-col>
+          <ion-col col-12>
+            <span class="user-ag" text-center>AG {{person.ag}}</span>
+          </ion-col>
+          <ion-col col-12>
+            <span class="user-cc" text-center>CC {{person.acc}}</span>
+          </ion-col>
+        </ion-row>
 
       <hr>
 

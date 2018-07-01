@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { MoneyTransferListPage } from '../money-transfer-list/money-transfer-list';
+import { PersonProvider } from '../../providers/person/person';
 /**
  * Generated class for the MenuPage page.
  *
@@ -16,7 +17,18 @@ import { MoneyTransferListPage } from '../money-transfer-list/money-transfer-lis
 })
 export class MenuPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  person = {
+    'name': {
+      'first': '',
+      'last': ''
+    },
+    'picture': '',
+    'ag': '',
+    'acc': ''
+  };
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public personProvider: PersonProvider) {
+    this.loadingPerson();
   }
 
   ionViewDidLoad() {
@@ -37,6 +49,20 @@ export class MenuPage {
   toLogout() {
     console.log('Logout');
     // this.navCtrl.push();
+  }
+
+  loadingPerson() {
+    this.personProvider.load().then(data => {
+      this.person = {
+        'name' : {
+          'first': data.results[0].name.first,
+          'last':  data.results[0].name.last
+        },
+        'picture': data.results[0].picture.large,
+        'ag': '12340',
+        'acc': '123456-7'   
+      }
+    })
   }
 
 }

@@ -49,13 +49,20 @@ body {
         border-radius: 50%;
         border: 2px solid ;
     }
+    &-fullname {
+        display: block;
+        text-align: center;
+        margin: auto;
+    }
     &-name {
-        @extend .text-semi-bold;   
+        @extend .text-semi-bold;
+        display: inline;
+        padding: .25em;
+        text-transform: capitalize;   
     }
-    &-ag {
-        @extend .text-thin;
-    }
-    &-cc {
+    &-ag, &-cc {
+        display: block;
+        margin: auto;
         @extend .text-thin;
     }
 }
