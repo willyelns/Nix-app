@@ -22,13 +22,14 @@
 // _variables
 $status-approved: #16B961;
 $status-failed: #F03030;
-$status-processed: #505155;
+$status-processed: #f3993c;
 
-$color-primary: #efe0a1;
+$color-primary: #2D7C91;//#efe0a1;
 $color-secondary: #B5950E;
 $color-secondary-rgba: rgba(181,149,14,.5);
-$color-thin-text: #63561D;
-
+$color-thin-text: #f9f0f0;//#5a5555;
+$color-gradient-bg: grandient-linear($color-primary, rgba(0,0,0,.3));
+$color-text:  #f9f0f0;//#5a5555;
 
 $font-family: 'Raleway', sans-serif;
 
@@ -39,7 +40,7 @@ ion-content {
 body {
     font-family: $font-family;
     h1, h2, h3, h4, h5, h6 {
-        color: $color-secondary !important;
+        color: $color-text !important;
     }
     
 }
