@@ -58,16 +58,10 @@ export class MoneyTransferListPage {
     this.pages = this.transfers.length / 5 > 1 ? (this.transfers.length / 5).toFixed(0) : 1;
     this.nextText = this.pages === 1 ? '' : 'Próximo'; 
     this.transfers.forEach(item => {
-        item.valor = typeof item.valor === 'string' ? item.valor : this.moneyFormat(item.valor.toFixed(2));
+        item.valor = typeof item.valor === 'string' ? item.valor : this.apiProvider.moneyFormat(item.valor.toFixed(2));
       })
     this.transferPage = this.paginateTransferList(this.elementsPage, this.currentPage);
     this.loading.dismiss();
-  }
-
-  moneyFormat(value) {
-    const separateValue = value.split('.');
-    separateValue[0] = separateValue[0].split(/(?=(?:...)*$)/).join('.');
-    return separateValue.join(',');
   }
 
   toMenu() {

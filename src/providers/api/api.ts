@@ -28,10 +28,13 @@ export class ApiProvider {
     });
   }
 
+  moneyFormat(value) {
+    const separateValue = value.split('.');
+    separateValue[0] = separateValue[0].split(/(?=(?:...)*$)/).join('.');
+    return separateValue.join(',');
+  }
+
   load() {
-    if(this.data) {
-      return Promise.resolve(this.data);
-    }
     return new Promise(resolve => {
       this.http.get(this.apiLink)
       .subscribe(data => {
