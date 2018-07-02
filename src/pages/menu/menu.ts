@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { MoneyTransferListPage } from '../money-transfer-list/money-transfer-list';
 import { PersonProvider } from '../../providers/person/person';
+import { LoginPage } from '../login/login';
 
 @IonicPage()
 @Component({
@@ -25,24 +26,17 @@ export class MenuPage {
     this.loadingPerson();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MenuPage');
-  }
-
   toBack() {
     this.navCtrl.pop();
   }
   toHome() {
-    console.log('home');
     this.navCtrl.push(HomePage);
   }
   toTransfer() {
-    console.log('transfer');
     this.navCtrl.push(MoneyTransferListPage);
   }
   toLogout() {
-    console.log('Logout');
-    // this.navCtrl.push();
+    this.navCtrl.setRoot(LoginPage);
   }
 
   loadingPerson() {

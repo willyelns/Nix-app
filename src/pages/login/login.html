@@ -1,0 +1,38 @@
+<ion-content padding>
+
+  <ion-grid class="container">
+
+      <div class="user-info">
+
+          <ion-row class="user">
+              <ion-col>
+                  <img [src]="person.picture" text-center>
+              </ion-col>
+            </ion-row>
+            <ion-row margin-top>
+              <ion-col col-12>
+                <div class="user-fullname">
+                    <h1 class="user-name" text-center>{{person.name.first}}</h1>
+                    <h1 class="user-name" text-center>{{person.name.last}}</h1>
+                </div>
+              </ion-col>
+              <ion-col col-12>
+                <span class="user-ag" text-center>AG {{person.ag}}</span>
+              </ion-col>
+              <ion-col col-12>
+                <span class="user-cc" text-center>CC {{person.acc}}</span>
+              </ion-col>
+            </ion-row>
+    
+          <hr>
+
+      </div>
+
+    <ion-row>
+      <ion-col>
+          <button ion-button type="submit" text-uppercase block (click)="login()">Login</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

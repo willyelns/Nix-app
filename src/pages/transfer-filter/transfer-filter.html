@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="secondary">
     <ion-buttons start>
       <button ion-button (click)="toBack()">
         <ion-icon name="arrow-back"></ion-icon>
@@ -36,8 +36,12 @@
           <ion-label floating>Nome do Beneficiário</ion-label>
           <ion-input type="text" formControlName="recipient"></ion-input>
         </ion-item>
-
-        <ion-segment formControlName="status" color="primary" padding-vertical>
+        <ion-row padding-top>
+          <ion-col>
+              <h2 text-center>Tipo</h2>
+          </ion-col>
+        </ion-row>
+        <ion-segment formControlName="status" color="primary" padding-bottom>
           <ion-segment-button value="liquidado">
             Liquidado
           </ion-segment-button>
@@ -48,7 +52,11 @@
             Inválido
           </ion-segment-button>
         </ion-segment>
-
+        <ion-row>
+            <ion-col>
+                <h2 text-center>Status</h2>
+            </ion-col>
+          </ion-row>
       <ion-segment formControlName="type" color="primary">
         <ion-segment-button value="ted">
           TED

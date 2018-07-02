@@ -1,23 +1,31 @@
 page-menu {
     .button {
         padding: 1.5em .5em;
-        border: 1px solid;
+        border: 1px solid $color-secondary;
         border-radius: .5em;
         margin: auto;
         display:  block;
-        @include transition(transform 200ms ease);
+        @include transition(color 200ms ease);
 
         ion-icon {
+            color: $color-secondary;
             font-size: 6em;
             display: block;
         }
         span {
+            color: $color-secondary;
             font-size: 1.6rem;
             @extend .text-semi-bold;
         }
 
         &:active {
-            transform: scale(1.1, 1.1);
+            background-color: $color-secondary;
+            span {
+                color: $color-primary;
+            }
+            ion-icon {
+                color: $color-primary;
+            }
         }
     }
 }

@@ -11,6 +11,7 @@ import { MenuPage } from '../pages/menu/menu';
 import { MoneyTransferListPage } from '../pages/money-transfer-list/money-transfer-list';
 import { TransferDetailsPage } from '../pages/transfer-details/transfer-details';
 import { TransferFilterPage } from '../pages/transfer-filter/transfer-filter';
+import { LoginPage } from '../pages/login/login';
 import { ApiProvider } from '../providers/api/api';
 import { PersonProvider } from '../providers/person/person';
 
@@ -21,7 +22,8 @@ import { PersonProvider } from '../providers/person/person';
     MenuPage,
     MoneyTransferListPage,
     TransferDetailsPage,
-    TransferFilterPage
+    TransferFilterPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { PersonProvider } from '../providers/person/person';
     MenuPage,
     MoneyTransferListPage,
     TransferDetailsPage,
-    TransferFilterPage
+    TransferFilterPage,
+    LoginPage
   ],
   providers: [
     StatusBar,

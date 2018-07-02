@@ -35,6 +35,9 @@ export class ApiProvider {
   }
 
   load() {
+    if(this.data) {
+      return Promise.resolve(this.data);
+    }
     return new Promise(resolve => {
       this.http.get(this.apiLink)
       .subscribe(data => {

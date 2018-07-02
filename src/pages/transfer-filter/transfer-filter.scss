@@ -2,8 +2,19 @@ page-transfer-filter {
     h1 {
         font-size: 2.2rem;
     }
+    h2 {
+        font-size: 2rem;
+    }
+    ion-label {
+        color: $color-secondary;
+    }
     ion-item {
         border-top: 0 !important;
         background-color: transparent !important;
+
+        .item-inner {
+            border-bottom: 0.55px solid $color-secondary !important;
+        }
     }
+    
 }

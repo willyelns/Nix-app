@@ -18,28 +18,30 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,600');
 
 
+
 // _variables
 $status-approved: #16B961;
 $status-failed: #F03030;
 $status-processed: #505155;
 
-$color-primary: #F4D246;
+$color-primary: #efe0a1;
 $color-secondary: #B5950E;
+$color-secondary-rgba: rgba(181,149,14,.5);
+$color-thin-text: #63561D;
+
 
 $font-family: 'Raleway', sans-serif;
 
 ion-content {
     background: $color-primary !important;
 }
-ion-header {
-    background: $color-secondary !important;
-}
-ion-footer {
-    background: $color-secondary !important;
-}
 
 body {
     font-family: $font-family;
+    h1, h2, h3, h4, h5, h6 {
+        color: $color-secondary !important;
+    }
+    
 }
 
 .user {
@@ -64,6 +66,7 @@ body {
         display: block;
         margin: auto;
         @extend .text-thin;
+        color: $color-thin-text;
     }
 }
 
