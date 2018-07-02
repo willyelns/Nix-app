@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button (click)="toBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+        Voltar
+      </button>
+    </ion-buttons>
+    <ion-title>NIX</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="clearFilter()">
+        Limpar Filtro
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h1>Detalhes da Transferência</h1>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <form [formGroup]="filterForm" (ngSubmit)="doFilter()">
+      <ion-list>
+        <ion-item>
+          <ion-label floating>Nome do Pagador</ion-label>
+          <ion-input type="text" formControlName="payer"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Nome do Beneficiário</ion-label>
+          <ion-input type="text" formControlName="recipient"></ion-input>
+        </ion-item>
+
+        <ion-segment formControlName="status" color="primary" padding-vertical>
+          <ion-segment-button value="liquidado">
+            Liquidado
+          </ion-segment-button>
+          <ion-segment-button value="processado">
+            Processado
+          </ion-segment-button>
+          <ion-segment-button value="invalido">
+            Inválido
+          </ion-segment-button>
+        </ion-segment>
+
+      <ion-segment formControlName="type" color="primary">
+        <ion-segment-button value="ted">
+          TED
+        </ion-segment-button>
+        <ion-segment-button value="cc">
+          CC
+        </ion-segment-button>
+        <ion-segment-button value="doc">
+          DOC
+        </ion-segment-button>
+      </ion-segment>
+
+      </ion-list>
+        
+      <button ion-button type="submit" text-uppercase outline block>Filtrar</button>
+    </form>
+  </ion-grid>
+
+</ion-content>

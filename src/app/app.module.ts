@@ -10,6 +10,7 @@ import { HomePage } from '../pages/home/home';
 import { MenuPage } from '../pages/menu/menu';
 import { MoneyTransferListPage } from '../pages/money-transfer-list/money-transfer-list';
 import { TransferDetailsPage } from '../pages/transfer-details/transfer-details';
+import { TransferFilterPage } from '../pages/transfer-filter/transfer-filter';
 import { ApiProvider } from '../providers/api/api';
 import { PersonProvider } from '../providers/person/person';
 
@@ -19,7 +20,8 @@ import { PersonProvider } from '../providers/person/person';
     HomePage,
     MenuPage,
     MoneyTransferListPage,
-    TransferDetailsPage
+    TransferDetailsPage,
+    TransferFilterPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { PersonProvider } from '../providers/person/person';
     HomePage,
     MenuPage,
     MoneyTransferListPage,
-    TransferDetailsPage
+    TransferDetailsPage,
+    TransferFilterPage
   ],
   providers: [
     StatusBar,

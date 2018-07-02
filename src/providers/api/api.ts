@@ -13,7 +13,19 @@ export class ApiProvider {
   }
   getFilteredTransfers(filter) {
 
-    return this.http.get(this.apiLink + '?tipo=' + filter.type + '&nome_pagador=' + filter.payer + '&nome_beneficiario=' + filter.recipient + '&status=' + filter.status);
+    return new Promise(resolve => {
+
+      let type = filter.type ? 'tipo=' + filter.type : '';
+      let payer = filter.payer ? '&nome_pagador=' + filter.payer : '';
+      let recipient = filter.recipient ? '&nome_beneficiario=' + filter.recipient : '';
+      let status = filter.status ? '&status=' + filter.status : '';
+
+      this.http.get(this.apiLink + '?' + type + payer + recipient + status)
+      .subscribe(data => {
+        this.data = data;
+        resolve(this.data);
+      });
+    });
   }
 
   load() {
