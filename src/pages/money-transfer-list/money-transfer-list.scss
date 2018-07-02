@@ -8,13 +8,12 @@ page-money-transfer-list {
     ion-card {
         margin: 0 !important;
         width: 100% !important;
-        background: linear-gradient($color-secondary-rgba, $color-primary);
         &:active {
             transform: scale(1.1, 1.1);
         }
     }
     .transfer {
-        background: linear-gradient($color-secondary-rgba, $color-primary);
+        background: $color-card;
         @extend .d-flex;
         align-items: center;
         padding: 1em 0.5em;
@@ -29,7 +28,7 @@ page-money-transfer-list {
         &-divider {
             height: 90px;
             margin: 0 .5em;
-            border: 1px solid $color-secondary;
+            border: 1px solid $color-text;
         }
         &-data {
             width: 100%;

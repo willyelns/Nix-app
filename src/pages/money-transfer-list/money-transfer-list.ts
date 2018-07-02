@@ -78,7 +78,7 @@ export class MoneyTransferListPage {
   }
 
   setPaginationText() {
-    this.nextText = this.currentPage === this.pages ? '' : 'Próximo';
+    this.nextText = this.currentPage == this.pages ? '' : 'Próximo';
     this.previousText = this.currentPage > 1 ? 'Anterior' : '';
   }
 

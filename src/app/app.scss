@@ -24,17 +24,21 @@ $status-approved: #16B961;
 $status-failed: #F03030;
 $status-processed: #f3993c;
 
-$color-primary: #2D7C91;//#efe0a1;
-$color-secondary: #B5950E;
-$color-secondary-rgba: rgba(181,149,14,.5);
-$color-thin-text: #f9f0f0;//#5a5555;
-$color-gradient-bg: grandient-linear($color-primary, rgba(0,0,0,.3));
-$color-text:  #f9f0f0;//#5a5555;
+//Main colors
+$color-primary: #2D7C91;
+$color-secondary: #13343D;
+$color-third: #12333B;
+$color-text:  #f9f0f0;
+
+$color-gradient: linear-gradient($color-primary, $color-third);
+$color-card: linear-gradient($color-primary, $color-third);
+$color-bg: linear-gradient($color-primary, $color-text);
+$color-thin-text: $color-text;
 
 $font-family: 'Raleway', sans-serif;
 
 ion-content {
-    background: $color-primary !important;
+    background: $color-bg !important;
 }
 
 body {
@@ -50,7 +54,7 @@ body {
         display: block;
         margin: auto;
         border-radius: 50%;
-        border: 2px solid ;
+        border: 2px solid $color-text;
     }
     &-fullname {
         display: block;

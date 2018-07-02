@@ -1,5 +1,12 @@
 page-login {
+    ion-content {
+        background: $color-gradient !important;
+    }
     .user-info {
         padding-top: 9em;
+
+        hr {
+            background-color: $color-text;
+        }
     }
 }
