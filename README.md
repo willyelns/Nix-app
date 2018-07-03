@@ -12,6 +12,7 @@ O aplicativo dispõe:
 - Ver detalhes da transferência individualmente.
 - Consumo de api para gerar usuários aleatoriamente.
 - Informações iniciais das transferências, total do valor transferido até o momento e total de transferências até o momento.
+--- 
 
 ## Tecnologias usadas
 
@@ -27,6 +28,8 @@ O aplicativo dispõe:
 * [Visual Studio Code](https://code.visualstudio.com/) como IDE.
 * MacOS High Sierra 10.13.4 como Sistam Operacional.
 * iOS 11.4 como aparelho de teste.
+
+---
 
 ## Setup
 
@@ -51,9 +54,13 @@ Caso tenha o [Ionic DevApp](https://ionicframework.com/docs/pro/devapp/) instala
 ```bash
 $ ionic serve -c
 ```
+--- 
+
 ## Build e Deploy
 
 Como depende de qual dispositivo será instalado, o link: [Deploying](https://ionicframework.com/docs/intro/deploying/), explica melhor o passo-a-passo para a instalação do aplicativo no smartphone.
+
+---
 
 ## Criação e Prototipagem
 
@@ -67,17 +74,18 @@ E páginas demonstrando interação do usuário como:
 - Puxe para atualizar as Transferências.
 - Lista depois de filtrada.
 
-### Telas
+### Alguns exemplos de telas
 
-1. ![SplashScreen](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/SplashScreen.png ) 
-2. ![Login](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/Login.png )
-3. ![Home](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/Home.png )
-4. ![FluxoNormal](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/FluxoNormal.png )
-5. ![Filtro](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/Filtro.png )
-6. ![Filtrado](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/Filtrado.png )
-7. ![DetalhesDeTransparencia](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/DetalhesDeTransparencia.png )
-8. ![Menu](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/Menu.png )
-9. ![InteracaoDeAtualizacao](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/InteracaoDeAtualizacao.png )
-10. ![SemDados](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/SemDados.png )
-11. ![SemConexao](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/SemConexao.png )
-12. ![ProblemaComServidor](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/ProblemasComServidor.png )
+
+
+![Login](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/Login.png )
+
+![Home](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/Home.png )
+
+![FluxoNormal](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/FluxoNormal.png )
+
+![Filtro](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/Filtro.png )
+
+![Menu](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/Menu.png )
+
+O arquivo bruto do layout, outras imagens e um vídeo exemplificando o protótipo estão neste [link](https://github.com/willyelns/Nix-app/tree/master/prototipo-info)
