@@ -69,17 +69,15 @@ E páginas demonstrando interação do usuário como:
 
 ### Telas
 
-1. ![alt][SplashScreen]
-2. ![alt][Login]
-3. ![alt][Home]
-4. ![alt][FluxoNormal]
-5. ![alt][Filtro]
-6. ![alt][Filtrado]
-7. ![alt][DetalhesDeTransparencia]
-8. ![alt][Menu]
-9. ![alt][InteracaoDeAtualizacao]
-10. ![alt][SemDados]
-11. ![alt][SemConexao]
-12. ![alt][ProblemaComServidor]
-
-[SplashScreen]:(https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/SplashScreen.png) "SplashScreen"
+1. ![SplashScreen](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/SplashScreen.png ) 
+2. ![Login](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/Login.png )
+3. ![Home](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/Home.png )
+4. ![FluxoNormal](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/FluxoNormal.png )
+5. ![Filtro](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/Filtro.png )
+6. ![Filtrado](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/Filtrado.png )
+7. ![DetalhesDeTransparencia](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/DetalhesDeTransparencia.png )
+8. ![Menu](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/Menu.png )
+9. ![InteracaoDeAtualizacao](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/InteracaoDeAtualizacao.png )
+10. ![SemDados](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/SemDados.png )
+11. ![SemConexao](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/SemConexao.png )
+12. ![ProblemaComServidor](https://raw.githubusercontent.com/willyelns/Nix-app/master/prototipo-info/imgs/ProblemasComServidor.png )
