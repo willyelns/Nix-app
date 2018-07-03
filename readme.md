@@ -1,4 +1,6 @@
 # Nix-app
+Mobile app to consume REST API simulating a bank app with list of money transfer
+# Nix-app
 ## Descrição do Projeto
 
 Aplicativo multiplataforma mobile para visualização de Transferências Bancárias por consumo de uma API REST.
